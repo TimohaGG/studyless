@@ -3,6 +3,7 @@ package com.studyless.studylesskidscrm.Models;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class IndividualTeacher {
@@ -19,6 +20,9 @@ public class IndividualTeacher {
 
     private Date startDate;
     private Date finishDate;
+
+    @OneToMany(mappedBy = "teacher")
+    private List<IndividualLessons> students;
 
 
 

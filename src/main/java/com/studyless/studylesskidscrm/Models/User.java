@@ -31,6 +31,9 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "teacher")
     private List<IndividualTeacher> individual_teachers;
 
+    @OneToMany(mappedBy = "manager")
+    private List<IndividualLessons> individualLearners;
+
 
     public void setUsername(@Size(min = 5, max = 50, message = "Від 5 до 50 символів") String username) {
         this.username = username;
